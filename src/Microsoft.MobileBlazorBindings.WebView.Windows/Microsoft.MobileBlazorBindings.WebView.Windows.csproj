@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
+
+    <Title>Windows (WPF) WebView component for hosting Blazor components in hybrid (native+web) applications.</Title>
+    <Description>Xamarin.Forms Windows (WPF) WebView component for hosting Blazor components in hybrid (native + web) applications.</Description>
+    <PackageTags>blazor;mobileblazorbindings</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="0.9.538-prerelease" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />
+    <PackageReference Include="Xamarin.Forms.Platform.WPF" Version="4.7.0.968" NoWarn="NU1701" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.MobileBlazorBindings.WebView\Microsoft.MobileBlazorBindings.WebView.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <FilesToSign Include="$(OutDir)\Microsoft.MobileBlazorBindings.WebView.Windows.dll">
+          <Authenticode>Microsoft400</Authenticode>
+      </FilesToSign>
+  </ItemGroup>
+</Project>

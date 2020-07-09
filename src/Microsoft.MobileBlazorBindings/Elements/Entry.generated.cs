@@ -17,21 +17,58 @@ namespace Microsoft.MobileBlazorBindings.Elements
                 renderer => new EntryHandler(renderer, new XF.Entry()));
         }
 
-        [Parameter] public double? CharacterSpacing { get; set; }
         [Parameter] public XF.ClearButtonVisibility? ClearButtonVisibility { get; set; }
+        /// <summary>
+        /// Gets or sets the position of the cursor.
+        /// </summary>
+        /// <value>
+        /// The position of the cursor.
+        /// </value>
         [Parameter] public int? CursorPosition { get; set; }
+        /// <summary>
+        /// Gets a value that indicates whether the font for the Entry element text is bold, italic, or neither.
+        /// </summary>
         [Parameter] public XF.FontAttributes? FontAttributes { get; set; }
+        /// <summary>
+        /// Gets the font family for the Entry element text.
+        /// </summary>
         [Parameter] public string FontFamily { get; set; }
+        /// <summary>
+        /// Gets the size of the font for the Entry element text.
+        /// </summary>
         [Parameter] public double? FontSize { get; set; }
+        /// <summary>
+        /// Gets or sets the horizontal text alignment.
+        /// </summary>
         [Parameter] public XF.TextAlignment? HorizontalTextAlignment { get; set; }
+        /// <summary>
+        /// Gets or sets a value that indicates if the entry should visually obscure typed text.
+        /// </summary>
+        /// <value>
+        /// <see langword="true" /> if the element is a password box; otherwise, <see langword="false" />. Default value is <see langword="false" />.
+        /// </value>
         [Parameter] public bool? IsPassword { get; set; }
+        /// <summary>
+        /// Gets or sets a value that controls whether text prediction and automatic text correction is on or off.
+        /// </summary>
+        /// <value>
+        /// <see langword="true" /> if text correction is on. Otherwise, <see langword="false" />.
+        /// </value>
         [Parameter] public bool? IsTextPredictionEnabled { get; set; }
-        [Parameter] public string Placeholder { get; set; }
-        [Parameter] public XF.Color? PlaceholderColor { get; set; }
+        /// <summary>
+        /// Gets or sets an enumeration value that controls the appearance of the return button.
+        /// </summary>
+        /// <value>
+        /// An enumeration value that controls the appearance of the return button.
+        /// </value>
         [Parameter] public XF.ReturnType? ReturnType { get; set; }
+        /// <summary>
+        /// Gets the length of the selection.
+        /// </summary>
+        /// <value>
+        /// The length of the selection.
+        /// </value>
         [Parameter] public int? SelectionLength { get; set; }
-        [Parameter] public string Text { get; set; }
-        [Parameter] public XF.Color? TextColor { get; set; }
         [Parameter] public XF.TextAlignment? VerticalTextAlignment { get; set; }
 
         public new XF.Entry NativeControl => ((EntryHandler)ElementHandler).EntryControl;
@@ -40,10 +77,6 @@ namespace Microsoft.MobileBlazorBindings.Elements
         {
             base.RenderAttributes(builder);
 
-            if (CharacterSpacing != null)
-            {
-                builder.AddAttribute(nameof(CharacterSpacing), AttributeHelper.DoubleToString(CharacterSpacing.Value));
-            }
             if (ClearButtonVisibility != null)
             {
                 builder.AddAttribute(nameof(ClearButtonVisibility), (int)ClearButtonVisibility.Value);
@@ -76,14 +109,6 @@ namespace Microsoft.MobileBlazorBindings.Elements
             {
                 builder.AddAttribute(nameof(IsTextPredictionEnabled), IsTextPredictionEnabled.Value);
             }
-            if (Placeholder != null)
-            {
-                builder.AddAttribute(nameof(Placeholder), Placeholder);
-            }
-            if (PlaceholderColor != null)
-            {
-                builder.AddAttribute(nameof(PlaceholderColor), AttributeHelper.ColorToString(PlaceholderColor.Value));
-            }
             if (ReturnType != null)
             {
                 builder.AddAttribute(nameof(ReturnType), (int)ReturnType.Value);
@@ -91,14 +116,6 @@ namespace Microsoft.MobileBlazorBindings.Elements
             if (SelectionLength != null)
             {
                 builder.AddAttribute(nameof(SelectionLength), SelectionLength.Value);
-            }
-            if (Text != null)
-            {
-                builder.AddAttribute(nameof(Text), Text);
-            }
-            if (TextColor != null)
-            {
-                builder.AddAttribute(nameof(TextColor), AttributeHelper.ColorToString(TextColor.Value));
             }
             if (VerticalTextAlignment != null)
             {

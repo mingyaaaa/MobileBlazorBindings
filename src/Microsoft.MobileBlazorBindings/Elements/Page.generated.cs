@@ -19,8 +19,20 @@ namespace Microsoft.MobileBlazorBindings.Elements
 
         [Parameter] public XF.ImageSource BackgroundImageSource { get; set; }
         [Parameter] public XF.ImageSource IconImageSource { get; set; }
+        /// <summary>
+        /// Marks the Page as busy. This will cause the platform specific global activity indicator to show a busy state.
+        /// </summary>
+        /// <value>
+        /// A bool indicating if the Page is busy or not.
+        /// </value>
         [Parameter] public bool? IsBusy { get; set; }
+        /// <summary>
+        /// The space between the content of the <see cref="T:Xamarin.Forms.Page" /> and it's border.
+        /// </summary>
         [Parameter] public XF.Thickness? Padding { get; set; }
+        /// <summary>
+        /// The <see cref="T:Xamarin.Forms.Page" />'s title.
+        /// </summary>
         [Parameter] public string Title { get; set; }
 
         public new XF.Page NativeControl => ((PageHandler)ElementHandler).PageControl;

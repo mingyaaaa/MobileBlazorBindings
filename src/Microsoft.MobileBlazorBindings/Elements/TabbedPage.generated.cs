@@ -17,7 +17,19 @@ namespace Microsoft.MobileBlazorBindings.Elements
                 renderer => new TabbedPageHandler(renderer, new XF.TabbedPage()));
         }
 
+        /// <summary>
+        /// Gets or sets the background color of the bar.
+        /// </summary>
+        /// <value>
+        /// The background color of the bar.
+        /// </value>
         [Parameter] public XF.Color? BarBackgroundColor { get; set; }
+        /// <summary>
+        /// Gets or sets the color of text on the bar.
+        /// </summary>
+        /// <value>
+        /// The color of text on the bar.
+        /// </value>
         [Parameter] public XF.Color? BarTextColor { get; set; }
         [Parameter] public XF.Color? SelectedTabColor { get; set; }
         [Parameter] public XF.Color? UnselectedTabColor { get; set; }

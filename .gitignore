@@ -13,6 +13,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Mono crash dumps
+*.blob
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -333,3 +336,6 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+# Xamarin auto-generated Android resources
+Resource.designer.cs

@@ -17,6 +17,9 @@ namespace Microsoft.MobileBlazorBindings.Elements
                 renderer => new ShellGroupItemHandler(renderer, new XF.ShellGroupItem()));
         }
 
+        /// <summary>
+        /// AsSingleItem (default) will only display the title of this item in the flyout. AsMultipleItems will create a separate flyout option for each child and <see cref="T:Xamarin.Forms.MenuItem" />.
+        /// </summary>
         [Parameter] public XF.FlyoutDisplayOptions? FlyoutDisplayOptions { get; set; }
 
         public new XF.ShellGroupItem NativeControl => ((ShellGroupItemHandler)ElementHandler).ShellGroupItemControl;
